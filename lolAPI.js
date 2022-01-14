@@ -73,4 +73,20 @@ router.get('/:champion/spells', async (req, res) => {
   }
 });
 
+router.get('/:champion/skins', async (req, res) => {
+  try {
+    const championData = getChampionData(req.params.champion);
+
+    res.json(
+      championData.skins.map(skin => ({
+        id: skin.id,
+        name: skin.name,
+        imageURL: `${IMAGES_LINK}/champion/skin/${req.params.champion}_${skin.num}.jpg`,
+      }))
+    );
+  } catch (err) {
+    res.status(404).json({ message: 'Unknown champion' });
+  }
+});
+
 module.exports = router;
