@@ -64,7 +64,7 @@ router.get('/:champion/spells', async (req, res) => {
       passive: {
         id: `${championData.name}Passive`,
         name: championData.passive.name,
-        description: championData.passive.name,
+        description: championData.passive.description,
         imageURL: `${IMAGES_LINK}/passive/${championData.passive.image.full}`,
       },
     });
