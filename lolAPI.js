@@ -42,4 +42,35 @@ router.get('/:champion/lore', async (req, res) => {
   }
 });
 
+router.get('/:champion/spells', async (req, res) => {
+  try {
+    const championData = getChampionData(req.params.champion);
+
+    const makeSpell = index => {
+      const spell = championData.spells[index];
+
+      return {
+        id: spell.id,
+        name: spell.name,
+        description: spell.description,
+        imageURL: `${IMAGES_LINK}/spell/${spell.image.full}`,
+      };
+    };
+
+    res.json({
+      q: makeSpell(0),
+      w: makeSpell(1),
+      e: makeSpell(2),
+      passive: {
+        id: `${championData.name}Passive`,
+        name: championData.passive.name,
+        description: championData.passive.name,
+        imageURL: `${IMAGES_LINK}/passive/${championData.passive.image.full}`,
+      },
+    });
+  } catch (err) {
+    res.status(404).json({ message: 'Unknown champion' });
+  }
+});
+
 module.exports = router;

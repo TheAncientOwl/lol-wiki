@@ -2,3 +2,6 @@ GET http://localhost:5000/api/Akshan/min-card
 
 ###
 GET http://localhost:5000/api/Akshan/lore
+
+###
+GET http://localhost:5000/api/Akshan/spells
