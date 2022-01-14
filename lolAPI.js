@@ -89,4 +89,19 @@ router.get('/:champion/skins', async (req, res) => {
   }
 });
 
+router.get('/:champion/overview', async (req, res) => {
+  try {
+    const championData = getChampionData(req.params.champion);
+
+    res.json({
+      allyTips: championData.allytips,
+      enemyTips: championData.enemytips,
+      info: championData.info,
+      stats: championData.stats,
+    });
+  } catch (err) {
+    res.status(404).json({ message: 'Unknown champion' });
+  }
+});
+
 module.exports = router;

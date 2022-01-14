@@ -8,3 +8,6 @@ GET http://localhost:5000/api/Akshan/spells
 
 ###
 GET http://localhost:5000/api/Akshan/skins
+
+###
+GET http://localhost:5000/api/Akshan/overview
