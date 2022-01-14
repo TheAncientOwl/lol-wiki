@@ -29,4 +29,17 @@ router.get('/:champion/min-card', async (req, res) => {
   }
 });
 
+router.get('/:champion/lore', async (req, res) => {
+  try {
+    const championData = getChampionData(req.params.champion);
+
+    res.json({
+      blurb: championData.blurb,
+      lore: championData.lore,
+    });
+  } catch (err) {
+    res.status(404).json({ message: 'Unknown champion' });
+  }
+});
+
 module.exports = router;
