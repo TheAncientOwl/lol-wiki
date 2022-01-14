@@ -1,0 +1,15 @@
+{
+  "name": "lol-wiki",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/TheAncientOwl/lol-wiki.git",
+  "author": "TheAncientOwl <dele.alex.o.o@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "server": "nodemon server.js"
+  }
+}
