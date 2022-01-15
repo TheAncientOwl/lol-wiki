@@ -2,11 +2,31 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const fs = require('fs');
+const { Console } = require('console');
 
 const IMAGES_LINK = 'http://localhost:5000/images';
 const CHAMPIONS_DATA_PATH = path.join(__dirname, 'assets', 'data', 'en_US', 'champion');
 
+// ? Create champions names map
+/**
+ * @returns map of champions names: lowercase name -> assets name
+ */
+const makeChampionsMap = () => {
+  const map = new Map();
+  const champions = fs.readdirSync(CHAMPIONS_DATA_PATH);
+  champions.forEach(champion => {
+    champion = champion.substring(0, champion.length - 5);
+    map.set(champion.toLowerCase(), champion);
+  });
+
+  return map;
+};
+const ChampionsMap = Object.freeze(makeChampionsMap());
+
+// ? Read champion data by name
 const getChampionData = name => {
+  name = ChampionsMap.get(name.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase());
+
   const dataPath = path.join(CHAMPIONS_DATA_PATH, name + '.json');
   const rawData = fs.readFileSync(dataPath);
   const data = JSON.parse(rawData).data[name];
@@ -14,13 +34,13 @@ const getChampionData = name => {
   return data;
 };
 
+// ? Routes
 /**
  *  @route /champions/list
  *  @return array of strings representing champions names
  */
 router.get('/champions/list', async (req, res) => {
   const champions = fs.readdirSync(CHAMPIONS_DATA_PATH);
-
   res.json(champions.map(champion => champion.substring(0, champion.length - 5)));
 });
 
