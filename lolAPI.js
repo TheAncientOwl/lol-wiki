@@ -34,14 +34,40 @@ const getChampionData = name => {
   return data;
 };
 
+const getMinCardChampion = name => {
+  const championData = getChampionData(name);
+
+  return {
+    id: championData.key,
+    avatarURL: `${IMAGES_LINK}/champion/avatar/${championData.image.full}`,
+    name: championData.name,
+    tags: championData.tags,
+    blurb: championData.blurb,
+  };
+};
+
 // ? Routes
 /**
  *  @route /champions/list
  *  @return array of strings representing champions names
  */
-router.get('/champions/list', async (req, res) => {
+router.get('/champions/list', (req, res) => {
   const champions = fs.readdirSync(CHAMPIONS_DATA_PATH);
   res.json(champions.map(champion => champion.substring(0, champion.length - 5)));
+});
+
+/**
+ * @route /champions/page/:pageNumber/size/:pageSize
+ */
+router.get('/champions/page/:pageNumber/size/:pageSize', (req, res) => {
+  const champions = fs.readdirSync(CHAMPIONS_DATA_PATH);
+  const { pageNumber, pageSize } = req.params;
+  const begin = Math.max(0, (pageNumber - 1) * pageSize);
+  const end = Math.min(champions.length, pageNumber * pageSize);
+
+  const result = [];
+  for (let i = begin; i < end; i++) result.push(getMinCardChampion(champions[i].substring(0, champions[i].length - 5)));
+  res.json(result);
 });
 
 /**
@@ -57,15 +83,7 @@ router.get('/champions/list', async (req, res) => {
  */
 router.get('/:champion/min-card', async (req, res) => {
   try {
-    const championData = getChampionData(req.params.champion);
-
-    res.json({
-      id: championData.key,
-      avatarURL: `${IMAGES_LINK}/champion/avatar/${championData.image.full}`,
-      name: championData.name,
-      tags: championData.tags,
-      blurb: championData.blurb,
-    });
+    res.json(getMinCardChampion(req.params.champion));
   } catch (err) {
     res.status(404).json({ message: 'Unknown champion' });
   }
@@ -168,6 +186,7 @@ router.get('/:champion/skins', async (req, res) => {
  * ? {
  * ?    allyTips: array of strings
  * ?    enemyTips: array of strings
+ * ?    tags: array of strings
  * ?    info: {
  * ?      attack     : number,
  * ?      defense    : number,
@@ -205,6 +224,7 @@ router.get('/:champion/overview', async (req, res) => {
     res.json({
       allyTips: championData.allytips,
       enemyTips: championData.enemytips,
+      tags: championData.tags,
       info: championData.info,
       stats: championData.stats,
     });
