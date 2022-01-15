@@ -8,7 +8,6 @@ export const Navbar = () => {
         <img src={LogoSrc} alt='LOL' className='lol-logo' />
         <h5 className='lol-title'>League of Legends WIKI</h5>
       </div>
-      <div className='lol-navbar-spacer' />
     </>
   );
 };

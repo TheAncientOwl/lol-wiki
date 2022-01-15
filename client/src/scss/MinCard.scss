@@ -1,0 +1,49 @@
+@import './theme.scss';
+
+.lol-card {
+  transform: scale(0.9);
+  border-color: map-get($map: $lol-colors, $key: 'dark-gold');
+  cursor: pointer;
+
+  &:hover {
+    border-color: map-get($map: $lol-colors, $key: 'light-gold');
+
+    .lol-card-title,
+    .lol-card-img {
+      border-color: map-get($map: $lol-colors, $key: 'light-gold');
+    }
+  }
+}
+
+.lol-card-img {
+  max-height: 400px;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
+}
+
+.lol-card-body {
+  position: relative;
+  background-color: map-get($map: $lol-colors, $key: 'medium-blue');
+}
+
+.lol-card-title {
+  position: absolute;
+  top: -1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: map-get($map: $lol-colors, $key: 'dark-blue');
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  border: 1px solid map-get($map: $lol-colors, $key: 'dark-gold');
+}
+
+.lol-blurb {
+  font-size: 0.85em;
+  margin-top: 0.2em;
+}
+
+.lol-text-tab {
+  display: inline-block;
+  width: 0.5em;
+}
