@@ -13,6 +13,17 @@ const getChampionData = name => {
   return data;
 };
 
+/**
+ * @route /:champion/min-card
+ * @return
+ * ? {
+ * ?    id        : champion id
+ * ?    avatarURL : link
+ * ?    name      : champion name
+ * ?    tags      : array of strings
+ * ?    blurb     : string, part of lore
+ * ? }
+ */
 router.get('/:champion/min-card', async (req, res) => {
   try {
     const championData = getChampionData(req.params.champion);
@@ -29,6 +40,14 @@ router.get('/:champion/min-card', async (req, res) => {
   }
 });
 
+/**
+ * @route /:champion/lore
+ * @return
+ * ? {
+ * ?    blurb : string, part of lore
+ * ?    lore  : string
+ * ? }
+ */
 router.get('/:champion/lore', async (req, res) => {
   try {
     const championData = getChampionData(req.params.champion);
@@ -42,6 +61,18 @@ router.get('/:champion/lore', async (req, res) => {
   }
 });
 
+/**
+ * @route /:champion/spells
+ * @return
+ * ? {
+ * ?    q, w, e, passive: {
+ * ?      id          : spell id
+ * ?      name        : spell name
+ * ?      description : string
+ * ?      imageURL    : link
+ * ?    }
+ * ? }
+ */
 router.get('/:champion/spells', async (req, res) => {
   try {
     const championData = getChampionData(req.params.champion);
@@ -73,6 +104,17 @@ router.get('/:champion/spells', async (req, res) => {
   }
 });
 
+/**
+ * @route /:champion/skins
+ * @return
+ * ! [
+ * ?  {
+ * ?    id       : skin id,
+ * ?    name     : skin name
+ * ?    imageURL : link
+ * ?  },
+ * ! ]
+ */
 router.get('/:champion/skins', async (req, res) => {
   try {
     const championData = getChampionData(req.params.champion);
@@ -89,6 +131,42 @@ router.get('/:champion/skins', async (req, res) => {
   }
 });
 
+/**
+ * @route /:champion/overview
+ * @return
+ * ? {
+ * ?    allyTips: array of strings
+ * ?    enemyTips: array of strings
+ * ?    info: {
+ * ?      attack     : number,
+ * ?      defense    : number,
+ * ?      magic      : number,
+ * ?      difficulty : number,
+ * ?    }
+ * ?    stats: {
+ * ?       hp                   : number
+ * ?       hpperlevel           : number
+ * ?       mp                   : number
+ * ?       mpperlevel           : number
+ * ?       movespeed            : number
+ * ?       armor                : number
+ * ?       armorperlevel        : number
+ * ?       spellblock           : number
+ * ?       spellblockperlevel   : number
+ * ?       attackrange          : number
+ * ?       hpregen              : number
+ * ?       hpregenperlevel      : number
+ * ?       mpregen              : number
+ * ?       mpregenperlevel      : number
+ * ?       crit                 : number
+ * ?       critperlevel         : number
+ * ?       attackdamage         : number
+ * ?       attackdamageperlevel : number
+ * ?       attackspeedperlevel  : number
+ * ?       attackspeed          : number
+ * ?    }
+ * ? }
+ */
 router.get('/:champion/overview', async (req, res) => {
   try {
     const championData = getChampionData(req.params.champion);
