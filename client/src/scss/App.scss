@@ -1,0 +1,23 @@
+@import './theme.scss';
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+.app-container {
+  color: map-get($map: $lol-colors, $key: 'light-gray');
+  height: 100vh;
+  overflow: auto;
+  background: rgba(5, 27, 46, 1);
+  background: linear-gradient(180deg, #020d15 90%, #0a3040 100%);
+}

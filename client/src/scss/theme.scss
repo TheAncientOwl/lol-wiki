@@ -1,0 +1,21 @@
+// import functions & variables
+@import '../../node_modules/bootstrap/scss/_functions';
+@import '../../node_modules/bootstrap/scss/_variables';
+
+$lol-colors: (
+  'app-background': rgba(5, 27, 46, 1),
+  'medium-blue': #01445b,
+  'dark-blue': #01273e,
+  'dark-gold': #b99149,
+  'dark-gray': #838277,
+  'dark-green': #09a646,
+  'light-gold': #f2e59c,
+  'light-gray': #d0d8cf,
+  'light-blue': #0dc3ce,
+  'light-green': #2cc467,
+);
+
+$theme-colors: map-merge($theme-colors, $lol-colors);
+
+// import bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap';
