@@ -66,7 +66,8 @@ router.get('/champions/page/:pageNumber/size/:pageSize', (req, res) => {
   const end = Math.min(champions.length, pageNumber * pageSize);
 
   const result = [];
-  for (let i = begin; i < end; i++) result.push(getMinCardChampion(champions[i].substring(0, champions[i].length - 5)));
+  for (let i = begin; i < end; i++)
+    result.push({ number: i + 1, ...getMinCardChampion(champions[i].substring(0, champions[i].length - 5)) });
   res.json(result);
 });
 
