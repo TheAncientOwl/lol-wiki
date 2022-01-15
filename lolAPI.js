@@ -38,7 +38,7 @@ const getMinCardChampion = name => {
 
   return {
     id: championData.key,
-    avatarURL: `${IMAGES_LINK}/champion/avatar/${championData.image.full}`,
+    avatarURL: `${IMAGES_LINK}/champion/card-min/${name}_0.jpg`,
     name: championData.name,
     tags: championData.tags,
     blurb: championData.blurb,
