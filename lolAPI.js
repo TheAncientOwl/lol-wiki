@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 const fs = require('fs');
 
-const IMAGES_LINK = 'http://localhost:5000/images';
+const IMAGES_LINK = `http://localhost:${process.env.PORT || 5000}/images`;
 const CHAMPIONS_DATA_PATH = path.join(__dirname, 'assets', 'data', 'en_US', 'champion');
 
 // ? Create champions names map
