@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const fs = require('fs');
-const { Console } = require('console');
 
 const IMAGES_LINK = 'http://localhost:5000/images';
 const CHAMPIONS_DATA_PATH = path.join(__dirname, 'assets', 'data', 'en_US', 'champion');
@@ -58,6 +57,7 @@ router.get('/champions/list', (req, res) => {
 
 /**
  * @route /champions/page/:pageNumber/size/:pageSize
+ * @return page with minCardChampion
  */
 router.get('/champions/page/:pageNumber/size/:pageSize', (req, res) => {
   const champions = fs.readdirSync(CHAMPIONS_DATA_PATH);
