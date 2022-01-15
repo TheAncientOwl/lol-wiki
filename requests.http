@@ -11,3 +11,6 @@ GET http://localhost:5000/api/Akshan/skins
 
 ###
 GET http://localhost:5000/api/Akshan/overview
+
+###
+GET http://localhost:5000/api/champions/list

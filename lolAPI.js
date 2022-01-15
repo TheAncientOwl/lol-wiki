@@ -4,14 +4,25 @@ const path = require('path');
 const fs = require('fs');
 
 const IMAGES_LINK = 'http://localhost:5000/images';
+const CHAMPIONS_DATA_PATH = path.join(__dirname, 'assets', 'data', 'en_US', 'champion');
 
 const getChampionData = name => {
-  const dataPath = path.join(__dirname, 'assets', 'data', 'en_US', 'champion', name + '.json');
+  const dataPath = path.join(CHAMPIONS_DATA_PATH, name + '.json');
   const rawData = fs.readFileSync(dataPath);
   const data = JSON.parse(rawData).data[name];
 
   return data;
 };
+
+/**
+ *  @route /champions/list
+ *  @return array of strings representing champions names
+ */
+router.get('/champions/list', async (req, res) => {
+  const champions = fs.readdirSync(CHAMPIONS_DATA_PATH);
+
+  res.json(champions.map(champion => champion.substring(0, champion.length - 5)));
+});
 
 /**
  * @route /:champion/min-card
