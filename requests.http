@@ -16,4 +16,4 @@ GET http://localhost:5000/api/Akshan/overview
 GET http://localhost:5000/api/champions/list
 
 ###
-GET http://localhost:5000/api/champions/page/1/size/4
+GET http://localhost:5000/api/champions/page/1/size/16

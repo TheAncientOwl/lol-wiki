@@ -9,7 +9,7 @@ export const App = () => {
   const [champions, setChampions] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/champions/page/1/size/16').then(response => setChampions(response.data));
+    axios.get('/api/champions/page/1/size/16').then(response => setChampions(response.data.champions));
   }, [page]);
 
   return (
