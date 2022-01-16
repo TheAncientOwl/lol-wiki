@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { BigCardLore } from './BigCardLore';
 import { BigCardProfile } from './BigCardProfile';
 import '../scss/BigCard.scss';
-import { BigCardLore } from './BigCardLore';
 
 export const BigCard = ({ championName }) => {
   const [profile, setProfile] = useState({});
