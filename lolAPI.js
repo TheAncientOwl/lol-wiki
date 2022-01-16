@@ -229,6 +229,7 @@ router.get('/:champion/overview', async (req, res) => {
       tags: championData.tags,
       info: championData.info,
       stats: championData.stats,
+      title: championData.title,
     });
   } catch (err) {
     res.status(404).json({ message: 'Unknown champion' });
