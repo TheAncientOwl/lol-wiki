@@ -1,9 +1,11 @@
+import '../scss/Pagination.scss';
+
 export const Pagination = ({ currentPage, onPageChange, pagesCount }) => {
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
 
-  const prevClass = prevPage === 0 ? 'page-item disabled' : '';
-  const nextClass = nextPage === pagesCount + 1 ? 'page-item disabled' : '';
+  const prevClass = prevPage === 0 ? 'page-item disabled pagination-tile-off' : '';
+  const nextClass = nextPage === pagesCount + 1 ? 'page-item disabled pagination-tile-off' : '';
 
   return (
     <nav aria-label='Pagination'>

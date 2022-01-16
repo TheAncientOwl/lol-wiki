@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Navbar } from './components/Navbar';
-import './scss/App.scss';
 import axios from 'axios';
-import { SmallCard } from './components/SmallCard';
+
+import './scss/App.scss';
+
 import { Pagination } from './components/Pagination';
+import { Navbar } from './components/Navbar';
+import { SmallCard } from './components/SmallCard';
 
 export const App = () => {
   const [currentPage, setCurrentPage] = useState(1);

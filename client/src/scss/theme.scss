@@ -3,6 +3,7 @@
 @import '../../node_modules/bootstrap/scss/_variables';
 
 $lol-colors: (
+  'black': rgba(0, 0, 0, 0.65),
   'app-background': rgba(5, 27, 46, 1),
   'medium-blue': #01445b,
   'dark-blue': #01273e,
@@ -11,7 +12,7 @@ $lol-colors: (
   'dark-green': #09a646,
   'light-gold': #f2e59c,
   'light-gray': #d0d8cf,
-  'light-blue': #0dc3ce,
+  'light-blue': #049eaa,
   'light-green': #2cc467,
 );
 
