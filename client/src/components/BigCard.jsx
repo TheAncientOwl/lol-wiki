@@ -93,9 +93,9 @@ export const BigCard = ({ championName }) => {
         Dolorem et eaque ad dolorum reprehenderit blanditiis consequatur officiis eius sint voluptas animi temporibus,
         ducimus est expedita, deserunt dolores.
       </section>
-      <setcion className='card big-card big-card-image-wrap' style={{ margin: 0, padding: 0 }}>
+      <section className='card big-card big-card-image-wrap' style={{ margin: 0, padding: 0 }}>
         <img src={overview.imageURL} alt={profile.name} className='big-card-image' />
-      </setcion>
+      </section>
     </div>
   );
 };
