@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Notfound404src from './images/404-not-found.jpg';
 
 import './scss/App.scss';
 
@@ -72,6 +73,21 @@ export const App = () => {
       <Navbar onSearch={handleSearch} onReset={handleReset} />
 
       {/* <BigCard championName={'Akshan'} /> */}
+
+      {champions.length === 0 && (
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className='col-12 col-md-6 col-lg-3 d-flex align-items-stretch'>
+            <SmallCard
+              number={404}
+              id={404}
+              avatarURL={Notfound404src}
+              name={'Not Found'}
+              tags={['oooppps', 'nope']}
+              blurb={'This is not the champion you are looking for...'}
+            />
+          </div>
+        </div>
+      )}
 
       {champions.length === 1 && (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
