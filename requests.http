@@ -20,3 +20,15 @@ GET http://localhost:5000/api/champions/list
 
 ###
 GET http://localhost:5000/api/champions/page/1/size/16
+
+###
+GET http://localhost:5000/api/Kai'sa/lore
+
+###
+GET http://localhost:5000/api/Kai'sa/spells
+
+###
+GET http://localhost:5000/api/Kai'sa/skins
+
+###
+GET http://localhost:5000/api/Kai'sa/overview

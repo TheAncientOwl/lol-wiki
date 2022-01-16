@@ -22,9 +22,11 @@ const makeChampionsMap = () => {
 };
 const ChampionsMap = Object.freeze(makeChampionsMap());
 
+const cleanChampionName = name => ChampionsMap.get(name.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase());
+
 // ? Read champion data by name
 const getChampionData = name => {
-  name = ChampionsMap.get(name.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase());
+  name = cleanChampionName(name);
 
   const dataPath = path.join(CHAMPIONS_DATA_PATH, name + '.json');
   const rawData = fs.readFileSync(dataPath);
@@ -34,7 +36,7 @@ const getChampionData = name => {
 };
 
 const getMinCardChampion = name => {
-  name = ChampionsMap.get(name.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase());
+  name = cleanChampionName(name);
   const championData = getChampionData(name);
 
   return {
@@ -174,7 +176,7 @@ router.get('/:champion/skins', async (req, res) => {
       championData.skins.map(skin => ({
         id: skin.id,
         name: skin.name,
-        imageURL: `${IMAGES_LINK}/champion/skin/${req.params.champion}_${skin.num}.jpg`,
+        imageURL: `${IMAGES_LINK}/champion/skin/${cleanChampionName(req.params.champion)}_${skin.num}.jpg`,
       }))
     );
   } catch (err) {
@@ -230,6 +232,7 @@ router.get('/:champion/overview', async (req, res) => {
       info: championData.info,
       stats: championData.stats,
       title: championData.title,
+      imageURL: `${IMAGES_LINK}/champion/card-max/${cleanChampionName(req.params.champion)}_0.jpg`,
     });
   } catch (err) {
     res.status(404).json({ message: 'Unknown champion' });
