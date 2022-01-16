@@ -32,3 +32,6 @@ GET http://localhost:5000/api/Kai'sa/skins
 
 ###
 GET http://localhost:5000/api/Kai'sa/overview
+
+###
+GET http://localhost:5000/api/Kai'sa/profile

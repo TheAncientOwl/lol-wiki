@@ -231,8 +231,21 @@ router.get('/:champion/overview', async (req, res) => {
       tags: championData.tags,
       info: championData.info,
       stats: championData.stats,
-      title: championData.title,
       imageURL: `${IMAGES_LINK}/champion/card-max/${cleanChampionName(req.params.champion)}_0.jpg`,
+    });
+  } catch (err) {
+    res.status(404).json({ message: 'Unknown champion' });
+  }
+});
+
+router.get('/:champion/profile', async (req, res) => {
+  try {
+    const championData = getChampionData(req.params.champion);
+
+    res.json({
+      name: championData.name,
+      title: championData.title,
+      avatarURL: `${IMAGES_LINK}/champion/avatar/${cleanChampionName(req.params.champion)}.png`,
     });
   } catch (err) {
     res.status(404).json({ message: 'Unknown champion' });
