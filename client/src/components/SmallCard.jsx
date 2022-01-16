@@ -17,6 +17,12 @@ export const SmallCard = ({ id, number, avatarURL, name, tags, blurb }) => {
           <span className='small-card-tab' />
           {blurb}
         </p>
+
+        <div className='small-card-tags'>
+          {tags.map(tag => (
+            <span className='badge small-card-tag'>{tag}</span>
+          ))}
+        </div>
       </div>
     </div>
   );

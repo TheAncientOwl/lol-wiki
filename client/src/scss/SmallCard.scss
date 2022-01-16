@@ -88,3 +88,13 @@
   display: inline-block;
   width: 0.5em;
 }
+
+.small-card-tags {
+  display: flex;
+  gap: 0.5em;
+}
+
+.small-card-tag {
+  background-color: map-get($map: $lol-colors, $key: 'app-background');
+  font-size: 0.85em;
+}
