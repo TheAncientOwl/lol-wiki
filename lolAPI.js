@@ -34,6 +34,7 @@ const getChampionData = name => {
 };
 
 const getMinCardChampion = name => {
+  name = ChampionsMap.get(name.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase());
   const championData = getChampionData(name);
 
   return {

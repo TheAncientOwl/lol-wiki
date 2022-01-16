@@ -26,4 +26,14 @@ img.lol-logo {
 h5.lol-title {
   font-size: 1.2em;
   color: map-get($map: $lol-colors, $key: 'light-gray');
+  cursor: pointer;
+
+  &:hover {
+    color: map-get($map: $lol-colors, $key: 'dark-gold');
+  }
+}
+
+.navbar-search-field {
+  max-width: 250px;
+  margin-left: auto;
 }
