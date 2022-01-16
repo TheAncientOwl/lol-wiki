@@ -2,24 +2,30 @@
 .big-card-profile-container {
   align-items: center;
   gap: 1.2em;
-  border-bottom: 3px solid map-get($map: $lol-colors, $key: 'dark-gold');
-  padding-bottom: 1em;
+  border-bottom: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
+  padding-bottom: 0.9em;
   display: flex;
-  width: 40%;
+  max-width: 450px;
+
+  @media (max-width: 470px) {
+    font-size: 0.8em;
+  }
 }
 
 .big-card-profile-avatar {
-  width: 80px;
-  height: 80px;
+  width: 3.5em;
+  height: 3.5em;
   border-radius: 50%;
-  border: 3px solid map-get($map: $lol-colors, $key: 'dark-gold');
+  border: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
 }
 
 .big-card-profile-name {
+  font-size: 1.1em;
   color: map-get($map: $lol-colors, $key: 'light-gray');
 }
 
 .big-card-profile-title {
+  font-size: 0.9em;
   text-transform: capitalize;
   color: map-get($map: $lol-colors, $key: 'dark-gray');
 }

@@ -14,7 +14,7 @@ export const Navbar = ({ onSearch, onReset }) => {
         </h5>
       </div>
 
-      <div className='d-flex navbar-search-field'>
+      <div className='d-flex navbar-search-field d-none d-md-flex'>
         <div className='input-group input-group-sm'>
           <input
             type='text'
