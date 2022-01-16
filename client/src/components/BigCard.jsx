@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { BigCardProfile } from './BigCardProfile';
 import '../scss/BigCard.scss';
+import { BigCardLore } from './BigCardLore';
 
 export const BigCard = ({ championName }) => {
   const [profile, setProfile] = useState({});
@@ -21,6 +22,7 @@ export const BigCard = ({ championName }) => {
   return (
     <div className='card big-card'>
       <BigCardProfile avatarURL={profile.avatarURL} name={profile.name} title={profile.title} />
+      <BigCardLore lore={lore.lore} />
     </div>
   );
 };
