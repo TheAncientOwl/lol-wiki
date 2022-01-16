@@ -20,3 +20,18 @@ $theme-colors: map-merge($theme-colors, $lol-colors);
 
 // import bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap';
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(11, 62, 107);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a37d37;
+  border: 0.08em solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
