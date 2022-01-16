@@ -3,14 +3,27 @@ import { Navbar } from './components/Navbar';
 import './scss/App.scss';
 import axios from 'axios';
 import { SmallCard } from './components/SmallCard';
+import { Pagination } from './components/Pagination';
 
 export const App = () => {
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pagesCount, setPagesCount] = useState(0);
   const [champions, setChampions] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/champions/page/1/size/16').then(response => setChampions(response.data.champions));
-  }, [page]);
+    console.log('Fetching data');
+    axios.get(`/api/champions/page/${currentPage}/size/16`).then(response => {
+      setChampions(response.data.champions);
+      setPagesCount(response.data.pagesCount);
+      console.log('Fetched');
+    });
+  }, [currentPage]);
+
+  const handlePageChange = newPage => {
+    if (newPage < 1 || newPage > pagesCount) return;
+
+    setCurrentPage(newPage);
+  };
 
   return (
     <div className='app-container'>
@@ -31,6 +44,10 @@ export const App = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Pagination currentPage={currentPage} onPageChange={handlePageChange} pagesCount={pagesCount} />
       </div>
     </div>
   );
