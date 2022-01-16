@@ -11,11 +11,9 @@ export const App = () => {
   const [champions, setChampions] = useState([]);
 
   useEffect(() => {
-    console.log('Fetching data');
     axios.get(`/api/champions/page/${currentPage}/size/16`).then(response => {
       setChampions(response.data.champions);
       setPagesCount(response.data.pagesCount);
-      console.log('Fetched');
     });
   }, [currentPage]);
 

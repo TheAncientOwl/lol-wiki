@@ -1,6 +1,7 @@
 @import './theme.scss';
 
 .small-card {
+  min-height: 580px;
   position: relative;
   transform: scale(0.9);
   border-color: map-get($map: $lol-colors, $key: 'dark-gold');
