@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { BigCardProfile } from './BigCardProfile';
+import '../scss/BigCard.scss';
 
 export const BigCard = ({ championName }) => {
   const [profile, setProfile] = useState({});
@@ -18,7 +19,7 @@ export const BigCard = ({ championName }) => {
   }, [championName]);
 
   return (
-    <div>
+    <div className='card big-card'>
       <BigCardProfile avatarURL={profile.avatarURL} name={profile.name} title={profile.title} />
     </div>
   );

@@ -1,0 +1,25 @@
+@import './theme.scss';
+.big-card-profile-container {
+  align-items: center;
+  gap: 1.2em;
+  border-bottom: 3px solid map-get($map: $lol-colors, $key: 'dark-gold');
+  padding-bottom: 1em;
+  display: flex;
+  width: 40%;
+}
+
+.big-card-profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid map-get($map: $lol-colors, $key: 'dark-gold');
+}
+
+.big-card-profile-name {
+  color: map-get($map: $lol-colors, $key: 'light-gray');
+}
+
+.big-card-profile-title {
+  text-transform: capitalize;
+  color: map-get($map: $lol-colors, $key: 'dark-gray');
+}
