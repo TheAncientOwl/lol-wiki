@@ -1,13 +1,15 @@
 @import './theme.scss';
 .big-card {
-  width: 95vw;
-  height: 85vh;
-  margin: 0 auto;
-  margin-top: 1em;
   background: rgba(5, 27, 46, 1);
   background: linear-gradient(180deg, #020d15 90%, #0a3040 100%);
   border-color: map-get($map: $lol-colors, $key: 'dark-gold');
   border: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
   padding: 1em;
   overflow: auto;
+  flex-grow: 1;
+  margin: 1.5em;
+
+  @media (max-width: 480px) {
+    margin: 1em;
+  }
 }

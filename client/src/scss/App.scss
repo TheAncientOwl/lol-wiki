@@ -15,6 +15,8 @@ h6 {
 }
 
 .app-container {
+  display: flex;
+  flex-direction: column;
   color: map-get($map: $lol-colors, $key: 'light-gray');
   height: 100vh;
   overflow: auto;
