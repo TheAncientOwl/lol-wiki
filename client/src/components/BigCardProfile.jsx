@@ -1,5 +1,3 @@
-import '../scss/BigCardProfile.scss';
-
 export const BigCardProfile = ({ avatarURL, name, title }) => {
   return (
     <div className='big-card-profile-container'>

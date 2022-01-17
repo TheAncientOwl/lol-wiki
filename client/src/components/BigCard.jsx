@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-import '../scss/BigCard.scss';
 import { BigCardLore } from './BigCardLore';
 import { BigCardProfile } from './BigCardProfile';
 import { BigCardSpells } from './BigCardSpells';

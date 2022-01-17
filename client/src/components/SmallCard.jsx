@@ -1,5 +1,4 @@
 import React from 'react';
-import '../scss/SmallCard.scss';
 
 export const SmallCard = ({ id, number, avatarURL, name, tags, blurb }) => {
   return (

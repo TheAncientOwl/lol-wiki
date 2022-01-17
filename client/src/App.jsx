@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Notfound404src from './images/404-not-found.jpg';
 
-import './scss/App.scss';
-
 import { Pagination } from './components/Pagination';
 import { Navbar } from './components/Navbar';
-import { SmallCard } from './components/SmallCard';
 import { BigCard } from './components/BigCard';
+import { SmallCard } from './components/SmallCard';
 
 export const SearchFieldEmpty = '';
 

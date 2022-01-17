@@ -1,5 +1,3 @@
-import '../scss/Pagination.scss';
-
 export const Pagination = ({ currentPage, onPageChange, pagesCount }) => {
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;

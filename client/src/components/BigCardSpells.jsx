@@ -1,5 +1,3 @@
-import '../scss/BigCardSpells.scss';
-
 export const BigCardSpells = ({ q, w, e, passive }) => {
   return (
     <div>

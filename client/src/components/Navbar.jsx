@@ -1,4 +1,3 @@
-import '../scss/Navbar.scss';
 import LogoSrc from '../images/logo.png';
 import { useState } from 'react';
 
