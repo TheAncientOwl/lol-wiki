@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.7em;
 
   & > img {
     width: 40px;
@@ -34,6 +34,10 @@
   }
 
   &:hover {
+    & > img {
+      box-shadow: 0 0 10px 2px map-get($map: $lol-colors, $key: 'light-gold');
+    }
+
     .big-card-ability-name {
       color: map-get($map: $lol-colors, $key: 'light-gray');
     }
@@ -52,6 +56,7 @@
     transition: all 150ms ease;
 
     border-color: map-get($map: $lol-colors, $key: 'light-gold');
+    box-shadow: 0 0 10px 1px map-get($map: $lol-colors, $key: 'light-gold');
   }
 
   & > h6.big-card-ability-name {
