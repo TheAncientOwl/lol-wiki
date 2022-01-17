@@ -16,6 +16,7 @@ export const App = () => {
 
   const fetchChampions = () => {
     axios.get(`/api/champions/page/${currentPage}/size/16`).then(response => {
+      console.log(response.data);
       setChampions(response.data.champions);
       setPagesCount(response.data.pagesCount);
     });
@@ -31,7 +32,7 @@ export const App = () => {
 
   const handleSearch = filter => {
     axios
-      .get(`api/${filter}/min-card`)
+      .get(`api/${filter}/summary`)
       .then(response => {
         setChampions([{ number: 1, ...response.data }]);
         setPagesCount(1);

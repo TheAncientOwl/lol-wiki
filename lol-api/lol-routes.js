@@ -19,6 +19,17 @@ router.get('/champions/page/:pageNumber/size/:pageSize', (req, res) => {
   res.json({ pagesCount: Math.ceil(champions.length / pageSize), champions: result });
 });
 
+router.get('/:champion/summary', (req, res) => {
+  try {
+    res.json({
+      number: 1,
+      ...extractChampionSummary(req.params.champion),
+    });
+  } catch (err) {
+    res.status(404).json({ response: 'Champion not found' });
+  }
+});
+
 router.get('/:champion/data', (req, res) => {
   try {
     const championData = extractChampionData(req.params.champion);
