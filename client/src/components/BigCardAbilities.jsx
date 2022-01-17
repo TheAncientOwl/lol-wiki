@@ -7,16 +7,17 @@ export const BigCardAbilities = ({ spells, passive }) => {
 
   return (
     <div className='big-card-abilities-container'>
-      <h5 className='big-card-abilities-container-title'>Abilities</h5>
+      <h5 className='big-card-abilities-container-title text-color-light-gray'>Abilities</h5>
 
       <ul className='nav nav-tabs big-card-abilities-nav' id='abilities-tab' role='tablist'>
         {abilities.map((ability, index) => (
           <li
             key={index + ability.id}
-            className='nav-item big-card-abilities-nav-item'
+            className={`nav-item big-card-abilities-nav-item ${index === activeTab ? 'big-card-ability-active' : ''}`}
             role='presentation'
             onClick={() => setActiveTab(index)}>
             <img
+              className='border-gold'
               src={ability.imageURL}
               alt={ability.name}
               id={`${ability.id}-tab`}
@@ -27,11 +28,12 @@ export const BigCardAbilities = ({ spells, passive }) => {
               aria-controls={ability.id}
               aria-selected={index === activeTab}
             />
+            <h6 className='big-card-ability-name text-dark-gray'>{ability.name}</h6>
           </li>
         ))}
       </ul>
 
-      <div className='tab-content big-card-abilities-content' id='abilities-tab-content'>
+      <div className='tab-content text-light-gray' id='abilities-tab-content'>
         {abilities.map((ability, index) => (
           <div
             key={index + ability.id}

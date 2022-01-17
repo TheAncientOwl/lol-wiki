@@ -15,13 +15,7 @@ h6 {
 }
 
 .app-container {
-  color: map-get($map: $lol-colors, $key: 'light-gray');
   height: 100vh;
   overflow: auto;
   background: rgba(5, 27, 46, 1);
-  background: linear-gradient(
-    180deg,
-    map-get($map: $lol-colors, $key: 'bg-gradient-from') 90%,
-    map-get($map: $lol-colors, $key: 'bg-gradient-to') 100%
-  );
 }

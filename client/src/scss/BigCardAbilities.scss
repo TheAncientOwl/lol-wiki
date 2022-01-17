@@ -5,12 +5,11 @@
 }
 
 .big-card-abilities-container-title {
-  color: map-get($map: $lol-colors, $key: 'light-gray');
   letter-spacing: 0.05em;
 }
 
 .big-card-abilities-nav {
-  padding-bottom: 0.7em;
+  padding-bottom: 0.4em;
   margin-bottom: 0.7em;
   display: flex;
   gap: 1em;
@@ -23,18 +22,39 @@
     border-right: 1px solid map-get($map: $lol-colors, $key: 'dark-gold');
   }
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+
   & > img {
     width: 40px;
     height: 40px;
-    border: 1px solid map-get($map: $lol-colors, $key: 'dark-gold');
     transition: all 150ms ease;
+  }
 
-    &:hover {
-      border: 1px solid map-get($map: $lol-colors, $key: 'light-gold');
+  &:hover {
+    .big-card-ability-name {
+      color: map-get($map: $lol-colors, $key: 'light-gray');
     }
   }
 }
 
-.big-card-abilities-content {
-  color: map-get($map: $lol-colors, $key: 'light-gray');
+.big-card-ability-name {
+  transition: all 150ms ease;
+  font-size: 0.7em;
+}
+
+.big-card-ability-active {
+  & > img {
+    width: 40px;
+    height: 40px;
+    transition: all 150ms ease;
+
+    border-color: map-get($map: $lol-colors, $key: 'light-gold');
+  }
+
+  & > h6.big-card-ability-name {
+    color: map-get($map: $lol-colors, $key: 'light-gray');
+  }
 }

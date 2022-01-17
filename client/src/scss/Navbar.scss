@@ -3,13 +3,6 @@
 $navbarHeight: 3.6em;
 
 .lol-navbar {
-  background: rgba(5, 27, 46, 1);
-  background: linear-gradient(
-    180deg,
-    map-get($map: $lol-colors, $key: 'bg-gradient-from') 90%,
-    map-get($map: $lol-colors, $key: 'bg-gradient-to') 100%
-  );
-
   display: flex;
   align-items: center;
   padding: 1em 2em;
@@ -56,7 +49,6 @@ img.lol-logo {
 
 h5.lol-title {
   font-size: 1.2em;
-  color: map-get($map: $lol-colors, $key: 'light-gray');
   cursor: pointer;
 
   &:hover {

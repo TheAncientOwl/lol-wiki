@@ -66,7 +66,7 @@ export const App = () => {
   );
 
   return (
-    <div className='app-container'>
+    <div className='app-container bg-gradient-blue text-light-gray'>
       <Navbar onSearch={handleSearch} onReset={handleReset} />
 
       <BigCard championName={'Akshan'} />

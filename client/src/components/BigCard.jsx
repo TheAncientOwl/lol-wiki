@@ -28,7 +28,7 @@ export const BigCard = ({ championName }) => {
   }, [championName]);
 
   return (
-    <div className='card big-card'>
+    <div className='card big-card bg-gradient-blue'>
       <BigCardProfile avatarURL={data.avatarURL} name={data.name} title={data.title} />
       <BigCardLore lore={data.lore} />
       <BigCardAbilities spells={data.spells} passive={data.passive} />

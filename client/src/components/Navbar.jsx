@@ -5,10 +5,10 @@ export const Navbar = ({ onSearch, onReset }) => {
   const [searchFilter, setSearchFilter] = useState('');
 
   return (
-    <div className='lol-navbar text-white'>
+    <div className='lol-navbar bg-gradient-blue text-white'>
       <div className='navbar-home'>
         <img src={LogoSrc} alt='LOL' className='lol-logo' />
-        <h5 className='lol-title' onClick={onReset}>
+        <h5 className='lol-title text-light-gray' onClick={onReset}>
           League of Legends WIKI
         </h5>
       </div>

@@ -1,13 +1,6 @@
 @import './lolColors.scss';
 
 .big-card {
-  background: rgba(5, 27, 46, 1);
-  background: linear-gradient(
-    180deg,
-    map-get($map: $lol-colors, $key: 'bg-gradient-from') 90%,
-    map-get($map: $lol-colors, $key: 'bg-gradient-to') 100%
-  );
-  border-color: map-get($map: $lol-colors, $key: 'dark-gold');
   border: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
   padding: 1.2em;
   overflow: auto;
