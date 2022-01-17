@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { BigCardAbilities } from './BigCardAbilities';
 
 import { BigCardLore } from './BigCardLore';
 import { BigCardProfile } from './BigCardProfile';
@@ -30,6 +31,7 @@ export const BigCard = ({ championName }) => {
     <div className='card big-card'>
       <BigCardProfile avatarURL={data.avatarURL} name={data.name} title={data.title} />
       <BigCardLore lore={data.lore} />
+      <BigCardAbilities spells={data.spells} passive={data.passive} />
     </div>
   );
 };

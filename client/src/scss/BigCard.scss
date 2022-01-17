@@ -5,11 +5,12 @@
   background: linear-gradient(180deg, #020d15 90%, #0a3040 100%);
   border-color: map-get($map: $lol-colors, $key: 'dark-gold');
   border: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
-  padding: 0.6em;
+  padding: 1.2em;
   overflow: auto;
   margin: 1.5em;
   position: relative;
   margin: 2em auto;
   max-width: 1250px;
   max-height: calc(85vh - 5em);
+  min-height: 500px;
 }

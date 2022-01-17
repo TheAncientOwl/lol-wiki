@@ -13,7 +13,7 @@ export const SmallCard = ({ id, number, avatarURL, name, tags, blurb }) => {
       <div className='card-body small-card-body'>
         <h6 className='card-title small-card-title'>{name}</h6>
         <p className='card-text small-card-blurb'>
-          <span className='small-card-tab' />
+          <span className='text-tab' />
           {blurb}
         </p>
 
