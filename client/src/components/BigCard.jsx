@@ -5,32 +5,32 @@ import { BigCardLore } from './BigCardLore';
 import { BigCardProfile } from './BigCardProfile';
 import { BigCardSpells } from './BigCardSpells';
 
+const defaultState = {
+  name: '',
+  title: '',
+  avatarURL: '',
+  imageURL: '',
+  lore: '',
+  allyTips: [''],
+  enemyTips: [''],
+  skins: [],
+  info: {},
+  stats: {},
+  spells: [],
+  passive: {},
+};
+
 export const BigCard = ({ championName }) => {
-  const [state, setState] = useState({ profile: {}, lore: {}, spells: {}, skins: [], overview: {} });
-  const { profile, lore, spells, skins, overview } = state;
+  const [data, setData] = useState(defaultState);
 
   useEffect(() => {
-    Promise.all([
-      axios.get(`/api/${championName}/profile`),
-      axios.get(`/api/${championName}/lore`),
-      axios.get(`/api/${championName}/spells`),
-      axios.get(`/api/${championName}/skins`),
-      axios.get(`/api/${championName}/overview`),
-    ]).then(values => {
-      setState({
-        profile: values[0].data,
-        lore: values[1].data,
-        spells: values[2].data,
-        skins: values[3].data,
-        overview: values[4].data,
-      });
-    });
+    axios.get(`/api/${championName}/data`).then(response => setData(response.data));
   }, [championName]);
 
   return (
     <div className='card big-card'>
-      <BigCardProfile avatarURL={profile.avatarURL} name={profile.name} title={profile.title} />
-      <BigCardLore lore={lore.lore} />
+      <BigCardProfile avatarURL={data.avatarURL} name={data.name} title={data.title} />
+      <BigCardLore lore={data.lore} />
       {/* <BigCardSpells q={spells.q} w={spells.w} e={spells.e} passive={spells.passive} /> */}
     </div>
   );

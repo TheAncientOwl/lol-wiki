@@ -33,7 +33,6 @@ export const App = () => {
     axios
       .get(`api/${filter}/min-card`)
       .then(response => {
-        console.log(response.data);
         setChampions([{ number: 1, ...response.data }]);
         setPagesCount(1);
       })

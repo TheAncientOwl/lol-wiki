@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
 
-const lolAPI = require('./lolAPI');
+const lolRoutes = require('./lol-api/lol-routes');
 
 const server = express();
 
 server.use(express.json());
-server.use('/api', lolAPI);
+server.use('/api', lolRoutes);
 server.use('/images', express.static(path.join(__dirname, 'assets/img')));
 
 // Serve static assets if in production
