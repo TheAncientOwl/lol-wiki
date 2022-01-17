@@ -16,14 +16,13 @@ const makeChampionsMap = () => {
 };
 const ChampionsMap = Object.freeze(makeChampionsMap());
 
-const cleanChampionName = name => ChampionsMap.get(name.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase());
-
 const readChampionFile = name => {
-  name = cleanChampionName(name);
+  // clean the name
+  const championName = ChampionsMap.get(name.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase());
 
-  const dataPath = path.join(CHAMPIONS_DATA_PATH, name + '.json');
+  const dataPath = path.join(CHAMPIONS_DATA_PATH, championName + '.json');
   const rawData = fs.readFileSync(dataPath);
-  const data = JSON.parse(rawData).data[name];
+  const data = JSON.parse(rawData).data[championName];
   data.nameAPI = name;
 
   return data;
