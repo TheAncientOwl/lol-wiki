@@ -3,7 +3,7 @@ import '../scss/BigCardSpells.scss';
 export const BigCardSpells = ({ q, w, e, passive }) => {
   return (
     <div>
-      <ul className='nav nav-tabs' id='myTab' role='tablist'>
+      {/* <ul className='nav nav-tabs' id='myTab' role='tablist'>
         <li className='nav-item' role='presentation'>
           <img
             src={passive.imageURL}
@@ -74,7 +74,7 @@ export const BigCardSpells = ({ q, w, e, passive }) => {
         <div className='tab-pane fade' id='abilityE' role='tabpanel' aria-labelledby='abilityE-tab'>
           {e.description}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
