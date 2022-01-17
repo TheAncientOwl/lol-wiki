@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Notfound404src from './images/404-not-found.jpg';
+import NotFound404SRC from './images/404-not-found.jpg';
 
 import { Pagination } from './components/Pagination';
 import { Navbar } from './components/Navbar';
@@ -77,7 +77,7 @@ export const App = () => {
             <SmallCard
               number={404}
               id={404}
-              avatarURL={Notfound404src}
+              avatarURL={NotFound404SRC}
               name={'Not Found'}
               tags={['oooppps', 'nope']}
               blurb={'This is not the champion you are looking for...'}
