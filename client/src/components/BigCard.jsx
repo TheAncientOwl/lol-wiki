@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 
 import { BigCardLore } from './BigCardLore';
 import { BigCardProfile } from './BigCardProfile';
-import { BigCardSpells } from './BigCardSpells';
 
 const defaultState = {
   name: '',
@@ -31,7 +30,6 @@ export const BigCard = ({ championName }) => {
     <div className='card big-card'>
       <BigCardProfile avatarURL={data.avatarURL} name={data.name} title={data.title} />
       <BigCardLore lore={data.lore} />
-      {/* <BigCardSpells q={spells.q} w={spells.w} e={spells.e} passive={spells.passive} /> */}
     </div>
   );
 };
