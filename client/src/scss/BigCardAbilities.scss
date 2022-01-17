@@ -27,7 +27,11 @@
     width: 40px;
     height: 40px;
     border: 1px solid map-get($map: $lol-colors, $key: 'dark-gold');
-    // border-radius: 50%;
+    transition: all 150ms ease;
+
+    &:hover {
+      border: 1px solid map-get($map: $lol-colors, $key: 'light-gold');
+    }
   }
 }
 
