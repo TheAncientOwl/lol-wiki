@@ -4,7 +4,11 @@ $navbarHeight: 3.6em;
 
 .lol-navbar {
   background: rgba(5, 27, 46, 1);
-  background: linear-gradient(180deg, #020d15 90%, #0a3040 100%);
+  background: linear-gradient(
+    180deg,
+    map-get($map: $lol-colors, $key: 'bg-gradient-from') 90%,
+    map-get($map: $lol-colors, $key: 'bg-gradient-to') 100%
+  );
 
   display: flex;
   align-items: center;
