@@ -6,7 +6,6 @@
   border-bottom: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
   padding-bottom: 0.75em;
   display: flex;
-  max-width: 450px;
   margin-bottom: 0.5em;
 
   @media (max-width: 470px) {

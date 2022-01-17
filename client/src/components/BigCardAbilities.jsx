@@ -7,7 +7,7 @@ export const BigCardAbilities = ({ spells, passive }) => {
 
   return (
     <div className='big-card-abilities-container'>
-      <h5 className='big-card-abilities-container-title text-color-light-gray'>Abilities</h5>
+      <h5 className='big-card-abilities-title text-color-light-gray'>Abilities</h5>
 
       <ul className='nav nav-tabs big-card-abilities-nav' id='abilities-tab' role='tablist'>
         {abilities.map((ability, index) => (
