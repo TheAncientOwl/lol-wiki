@@ -17,7 +17,7 @@ export const Navbar = ({ onSearch, onReset }) => {
         <div className='input-group input-group-sm'>
           <input
             type='text'
-            className='form-control'
+            className='form-control bg-black border-gold'
             placeholder='Champion'
             aria-label='Champion'
             aria-describedby='basic-addon1'
