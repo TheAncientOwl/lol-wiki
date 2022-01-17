@@ -6,8 +6,8 @@ import './scss/App.scss';
 
 import { Pagination } from './components/Pagination';
 import { Navbar } from './components/Navbar';
-import { BigCard } from './components/BigCard';
 import { SmallCard } from './components/SmallCard';
+import { BigCard } from './components/BigCard';
 
 export const SearchFieldEmpty = '';
 
@@ -72,9 +72,9 @@ export const App = () => {
     <div className='app-container'>
       <Navbar onSearch={handleSearch} onReset={handleReset} />
 
-      {/* <BigCard championName={'Akshan'} /> */}
+      <BigCard championName={'Akshan'} />
 
-      {champions.length === 0 && (
+      {/* {champions.length === 0 && (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <div className='col-12 col-md-6 col-lg-3 d-flex align-items-stretch'>
             <SmallCard
@@ -112,7 +112,7 @@ export const App = () => {
             <Pagination currentPage={currentPage} onPageChange={handlePageChange} pagesCount={pagesCount} />
           </div>
         </>
-      )}
+      )} */}
     </div>
   );
 };
