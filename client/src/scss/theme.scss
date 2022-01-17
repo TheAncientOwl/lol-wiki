@@ -23,3 +23,14 @@ $theme-colors: map-merge($theme-colors, $lol-colors);
   border: 0.08em solid rgb(0, 0, 0);
   border-radius: 5px;
 }
+
+/* text selector */
+::-moz-selection {
+  color: map-get($map: $lol-colors, $key: 'text-dark-blue');
+  background: map-get($map: $lol-colors, $key: 'light-gold');
+}
+
+::selection {
+  color: rgb(202, 6, 6);
+  background: map-get($map: $lol-colors, $key: 'light-gold');
+}
