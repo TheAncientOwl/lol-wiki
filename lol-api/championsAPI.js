@@ -23,7 +23,7 @@ const readChampionFile = name => {
   const dataPath = path.join(CHAMPIONS_DATA_PATH, championName + '.json');
   const rawData = fs.readFileSync(dataPath);
   const data = JSON.parse(rawData).data[championName];
-  data.nameAPI = name;
+  data.nameAPI = championName;
 
   return data;
 };
