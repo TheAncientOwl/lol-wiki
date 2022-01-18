@@ -16,7 +16,6 @@ export const App = () => {
 
   const fetchChampions = () => {
     axios.get(`/api/champions/page/${currentPage}/size/16`).then(response => {
-      console.log(response.data);
       setChampions(response.data.champions);
       setPagesCount(response.data.pagesCount);
     });
