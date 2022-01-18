@@ -73,7 +73,19 @@ export const App = () => {
     <div className='app-container bg-gradient-blue text-light-gray'>
       <Navbar onSearch={handleSearch} onReset={handleReset} />
 
-      <div style={{ display: activeChampion === ActiveChampionNull ? 'none' : 'block' }}>
+      <div
+        style={{
+          display: activeChampion === ActiveChampionNull ? 'none' : 'flex',
+          zIndex: 99999,
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.65)',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         {activeChampion !== ActiveChampionNull && (
           <BigCard onClose={() => setActiveChampion(ActiveChampionNull)} championName={activeChampion} />
         )}
