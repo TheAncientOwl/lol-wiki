@@ -8,11 +8,13 @@ import { BigCard } from './components/BigCard';
 import { SmallCard } from './components/SmallCard';
 
 export const SearchFieldEmpty = '';
+const ActiveChampionNull = '';
 
 export const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pagesCount, setPagesCount] = useState(0);
   const [champions, setChampions] = useState([]);
+  const [activeChampion, setActiveChampion] = useState(ActiveChampionNull);
 
   const fetchChampions = () => {
     axios.get(`/api/champions/page/${currentPage}/size/16`).then(response => {
@@ -44,6 +46,7 @@ export const App = () => {
   };
 
   const handleReset = () => {
+    setActiveChampion(ActiveChampionNull);
     setCurrentPage(1);
     fetchChampions();
   };
@@ -53,6 +56,7 @@ export const App = () => {
       {champions.map(champion => (
         <div key={champion.id} className='col-12 col-md-6 col-lg-3 d-flex align-items-stretch'>
           <SmallCard
+            onClick={() => setActiveChampion(champion.name)}
             number={champion.number}
             id={champion.id}
             avatarURL={champion.avatarURL}
@@ -69,9 +73,13 @@ export const App = () => {
     <div className='app-container bg-gradient-blue text-light-gray'>
       <Navbar onSearch={handleSearch} onReset={handleReset} />
 
-      <BigCard championName={'Akshan'} />
+      <div style={{ display: activeChampion === ActiveChampionNull ? 'none' : 'block' }}>
+        {activeChampion !== ActiveChampionNull && (
+          <BigCard onClose={() => setActiveChampion(ActiveChampionNull)} championName={activeChampion} />
+        )}
+      </div>
 
-      {/* {champions.length === 0 && (
+      {champions.length === 0 && (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <div className='col-12 col-md-6 col-lg-3 d-flex align-items-stretch'>
             <SmallCard
@@ -90,6 +98,7 @@ export const App = () => {
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <div key={champions[0].id} className='col-12 col-md-6 col-lg-3 d-flex align-items-stretch'>
             <SmallCard
+              onClick={() => setActiveChampion(champions[0].name)}
               number={champions[0].number}
               id={champions[0].id}
               avatarURL={champions[0].avatarURL}
@@ -109,7 +118,7 @@ export const App = () => {
             <Pagination currentPage={currentPage} onPageChange={handlePageChange} pagesCount={pagesCount} />
           </div>
         </>
-      )} */}
+      )}
     </div>
   );
 };

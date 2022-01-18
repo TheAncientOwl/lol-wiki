@@ -22,16 +22,18 @@ const defaultState = {
   passive: {},
 };
 
-export const BigCard = ({ championName }) => {
+export const BigCard = ({ championName, onClose }) => {
   const [data, setData] = useState(defaultState);
 
   useEffect(() => {
+    setData(defaultState);
+
     axios.get(`/api/${championName}/data`).then(response => setData(response.data));
   }, [championName]);
 
   return (
-    <div className='card big-card bg-gradient-blue'>
-      <BigCardProfile avatarURL={data.avatarURL} name={data.name} title={data.title} />
+    <div className='card big-card bg-gradient-blue' style={{ position: 'relative' }}>
+      <BigCardProfile onClose={onClose} avatarURL={data.avatarURL} name={data.name} title={data.title} />
       <BigCardLore lore={data.lore} />
       <BigCardOverview
         allyTips={data.allyTips}

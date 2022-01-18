@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const SmallCard = ({ id, number, avatarURL, name, tags, blurb }) => {
+export const SmallCard = ({ id, number, avatarURL, name, tags, blurb, onClick }) => {
   return (
-    <div className='card small-card border-gold'>
+    <div className='card small-card border-gold' onClick={onClick}>
       <div className='small-card-number bg-black text-light-gray border-gold'>{number}</div>
 
       <div style={{ position: 'relative' }}>
