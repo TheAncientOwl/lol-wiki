@@ -1,9 +1,12 @@
 @import './lolColors.scss';
 
 .big-card-skins-container {
-  max-width: 600px;
-  max-height: 500px;
+  margin-bottom: 0;
+}
+
+.big-card-skins-gallery {
   position: relative;
+  margin: 0 auto;
 }
 
 .big-card-skins-title {

@@ -6,8 +6,8 @@ export const BigCardAbilities = ({ spells, passive }) => {
   const abilities = [passive, ...spells];
 
   return (
-    <div className='big-card-abilities-container'>
-      <h5 className='big-card-abilities-title text-color-light-gray'>Abilities</h5>
+    <section className='big-card-section'>
+      <h5 className='big-card-section-title'>Abilities</h5>
 
       <ul className='nav nav-tabs big-card-abilities-nav' id='abilities-tab' role='tablist'>
         {abilities.map((ability, index) => (
@@ -46,6 +46,6 @@ export const BigCardAbilities = ({ spells, passive }) => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };

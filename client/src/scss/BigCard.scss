@@ -3,11 +3,21 @@
 .big-card {
   border: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
   padding: 1.2em;
+  padding-top: 0;
   overflow: auto;
   margin: 1.5em;
   position: relative;
-  margin: 2em auto;
-  max-width: 1250px;
-  max-height: calc(85vh - 5em);
+  max-width: 800px;
+  max-height: calc(92vh - 5em);
   min-height: 500px;
+}
+
+.big-card-section-title {
+  color: map-get($map: $lol-colors, $key: 'light-gray');
+  margin-bottom: 0.6em;
+  margin-left: 0.3em;
+}
+
+.big-card-section {
+  margin-bottom: 1.2em;
 }

@@ -6,7 +6,11 @@
   border-bottom: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
   padding-bottom: 0.75em;
   display: flex;
-  margin-bottom: 0.5em;
+  position: sticky;
+  top: 0;
+  background-color: map-get($map: $lol-colors, $key: 'bg-gradient-from');
+  z-index: 20;
+  padding-top: 1em;
 
   @media (max-width: 470px) {
     font-size: 0.8em;
