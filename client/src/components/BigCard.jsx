@@ -8,6 +8,7 @@ import { BigCardProfile } from './BigCardProfile';
 import { BigCardSkins } from './BigCardSkins';
 
 const defaultState = {
+  loaded: false,
   name: '',
   title: '',
   avatarURL: '',
@@ -28,10 +29,10 @@ export const BigCard = ({ championName, onClose }) => {
   useEffect(() => {
     setData(defaultState);
 
-    axios.get(`/api/${championName}/data`).then(response => setData(response.data));
+    axios.get(`/api/${championName}/data`).then(response => setData({ loaded: true, ...response.data }));
   }, [championName]);
 
-  return (
+  return data.loaded === true ? (
     <div className='card big-card bg-gradient-blue' style={{ position: 'relative' }}>
       <BigCardProfile onClose={onClose} avatarURL={data.avatarURL} name={data.name} title={data.title} />
       <BigCardLore lore={data.lore} />
@@ -45,5 +46,7 @@ export const BigCard = ({ championName, onClose }) => {
       <BigCardAbilities spells={data.spells} passive={data.passive} />
       <BigCardSkins skins={data.skins} championName={data.name} />
     </div>
+  ) : (
+    <div class='spinner-border text-dark-gold' role='status'></div>
   );
 };
