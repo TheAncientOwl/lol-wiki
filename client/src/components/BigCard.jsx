@@ -5,6 +5,7 @@ import { BigCardAbilities } from './BigCardAbilities';
 import { BigCardLore } from './BigCardLore';
 import { BigCardOverview } from './BigCardOverview';
 import { BigCardProfile } from './BigCardProfile';
+import { BigCardSkins } from './BigCardSkins';
 
 const defaultState = {
   name: '',
@@ -40,6 +41,7 @@ export const BigCard = ({ championName }) => {
         lore={data.lore}
       />
       <BigCardAbilities spells={data.spells} passive={data.passive} />
+      <BigCardSkins skins={data.skins} championName={data.name} />
     </div>
   );
 };

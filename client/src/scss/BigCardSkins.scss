@@ -1,0 +1,62 @@
+@import './lolColors.scss';
+
+.big-card-skins-container {
+  max-width: 600px;
+  max-height: 500px;
+  position: relative;
+}
+
+.big-card-skins-title {
+  margin-bottom: 1em;
+}
+
+.big-card-skins-info {
+  position: absolute;
+  bottom: 5em;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.4em;
+}
+
+.big-card-skins-skin-title {
+  background-color: map-get($map: $lol-colors, $key: 'black');
+  color: map-get($map: $lol-colors, $key: 'light-gray');
+  margin: 0 0.6em;
+  box-shadow: 0 0 10px 2px map-get($map: $lol-colors, $key: 'dark-gold');
+}
+
+.big-card-skins-separator {
+  flex-grow: 1;
+  height: 3px;
+  box-shadow: 0 0 10px 2px map-get($map: $lol-colors, $key: 'dark-gold');
+  background-color: map-get($map: $lol-colors, $key: 'dark-gold');
+  border-radius: 0.125em;
+}
+
+.image-gallery-thumbnail.active {
+  border: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
+}
+
+.image-gallery-thumbnail:hover {
+  border-color: map-get($map: $lol-colors, $key: 'light-gold');
+}
+
+.image-gallery-svg {
+  color: map-get($map: $lol-colors, $key: 'dark-gold');
+  max-height: 4em;
+  transition: all 200ms ease;
+
+  &:hover {
+    color: map-get($map: $lol-colors, $key: 'light-gold');
+  }
+}
+
+.image-gallery-image {
+  border: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
+  box-shadow: 0 0 20px 2px map-get($map: $lol-colors, $key: 'dark-gold');
+  border-radius: 0.25em;
+  overflow: hidden;
+}

@@ -1,6 +1,7 @@
 // ! DON'T CHANGE THE ORDER!
 @import './resets.scss';
 @import './theme.scss';
+@import '~react-image-gallery/styles/scss/image-gallery.scss';
 
 @import './App.scss';
 @import './Navbar.scss';
@@ -12,3 +13,4 @@
 @import './BigCardLore.scss';
 @import './BigCardAbilities.scss';
 @import './BigCardOverview.scss';
+@import './BigCardSkins.scss';
