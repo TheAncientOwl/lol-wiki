@@ -25,3 +25,8 @@
   background-color: map-get($map: $lol-colors, $key: 'dark-gold') !important;
   border: solid 1px map-get($map: $lol-colors, $key: 'dark-gold');
 }
+
+li.page-item.disabled.pagination-tile-off > * {
+  background-color: rgba(65, 64, 64, 0.65);
+  border-color: map-get($map: $lol-colors, $key: 'light-blue');
+}
