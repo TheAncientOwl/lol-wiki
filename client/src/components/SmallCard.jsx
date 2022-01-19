@@ -10,12 +10,14 @@ export const SmallCard = ({ id, number, avatarURL, name, tags, blurb, onClick })
         <h6 className='small-card-read-more'>read more</h6>
       </div>
 
-      <div className='card-body position-relative bg-dark-blue'>
+      <div className='card-body position-relative bg-dark-blue' style={{ display: 'flex', flexDirection: 'column' }}>
         <h6 className='card-title border-gold small-card-title'>{name}</h6>
         <p className='card-text small-card-blurb'>
           <span className='text-tab' />
           {blurb}
         </p>
+
+        <div style={{ flexGrow: 1 }} />
 
         <div className='small-card-tags'>
           {tags.map(tag => (
