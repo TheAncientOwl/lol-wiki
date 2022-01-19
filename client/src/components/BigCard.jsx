@@ -12,7 +12,6 @@ const defaultState = {
   name: '',
   title: '',
   avatarURL: '',
-  imageURL: '',
   lore: '',
   allyTips: [''],
   enemyTips: [''],

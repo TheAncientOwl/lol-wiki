@@ -47,7 +47,6 @@ const extractChampionData = championName => {
     name: championData.name,
     title: championData.title,
     avatarURL: `${IMAGES_LINK}/champion/avatar/${championData.nameAPI}.png`,
-    imageURL: `${IMAGES_LINK}/champion/data/${championData.nameAPI}_0.jpg`,
     lore: championData.lore,
     allyTips: championData.allytips,
     enemyTips: championData.enemytips,
