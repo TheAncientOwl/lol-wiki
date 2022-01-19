@@ -42,8 +42,10 @@ export const BigCardAbilities = ({ spells, passive }) => {
             id={ability.id}
             role='tabpanel'
             aria-labelledby={`${ability.id}-tab`}>
-            <span className='text-tab'></span>
-            {removeTags(ability.description)}
+            <div className='big-card-abilities-description'>
+              <span className='text-tab'></span>
+              {removeTags(ability.description)}
+            </div>
           </div>
         ))}
       </div>
