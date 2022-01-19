@@ -1,10 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { removeTags } from '../App';
 
 export const BigCardAbilities = ({ spells, passive }) => {
   const [activeTab, setActiveTab] = useState(0);
+  const [abilityDescMinHeight, setAbilityDescMinHeight] = useState(0);
 
   const abilities = [passive, ...spells];
+
+  const abilityDescriptionHeight = useRef(0);
+
+  useEffect(() => {
+    const elements = document.getElementsByClassName('big-card-abilities-description');
+
+    console.log('render');
+    for (const element of elements) {
+      const oldDisplay = element.style.display;
+      element.style.display = 'block';
+
+      const elementHeight = element.getBoundingClientRect().height;
+      if (elementHeight > abilityDescMinHeight) setAbilityDescMinHeight(elementHeight);
+      console.log(element.clientHeight);
+
+      element.style.display = oldDisplay;
+    }
+  });
 
   return (
     <section className='big-card-section'>
@@ -38,11 +57,12 @@ export const BigCardAbilities = ({ spells, passive }) => {
         {abilities.map((ability, index) => (
           <div
             key={index + ability.id}
-            className={`tab-pane fade ${index === activeTab ? 'show active' : ''}`}
+            style={{ minHeight: `${abilityDescMinHeight}px` }}
+            className={`tab-pane fade ${index === activeTab ? 'show active' : ''} big-card-abilities-description`}
             id={ability.id}
             role='tabpanel'
             aria-labelledby={`${ability.id}-tab`}>
-            <div className='big-card-abilities-description'>
+            <div>
               <span className='text-tab'></span>
               {removeTags(ability.description)}
             </div>
