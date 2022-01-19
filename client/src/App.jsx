@@ -20,6 +20,12 @@ const SingleCardContainer = ({ card }) => {
   );
 };
 
+export const removeTags = str => {
+  if (str === null || str === '') return '';
+  else str = str.toString();
+  return str.replace(/(<([^>]+)>)/gi, '');
+};
+
 export const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pagesCount, setPagesCount] = useState(0);

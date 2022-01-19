@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { removeTags } from '../App';
 
 export const BigCardAbilities = ({ spells, passive }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -42,7 +43,7 @@ export const BigCardAbilities = ({ spells, passive }) => {
             role='tabpanel'
             aria-labelledby={`${ability.id}-tab`}>
             <span className='text-tab'></span>
-            {ability.description?.replaceAll('<br>', '')}
+            {removeTags(ability.description)}
           </div>
         ))}
       </div>

@@ -2,15 +2,17 @@
 
 .big-card {
   border: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
-  padding: 1.2em;
-  padding-top: 0;
-  overflow: auto;
   margin: 1.5em;
   position: relative;
   max-width: 800px;
   max-height: 96vh;
   min-height: 500px;
   cursor: default;
+}
+
+.big-card-content {
+  overflow: auto;
+  padding: 1.2em calc(1.2em - 0.35em) 1.2em 1.2em;
 }
 
 .big-card-section-title {

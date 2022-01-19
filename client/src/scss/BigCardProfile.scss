@@ -10,7 +10,9 @@
   top: 0;
   background-color: map-get($map: $lol-colors, $key: 'bg-gradient-from');
   z-index: 20;
-  padding-top: 1em;
+  padding: 1.2em;
+  padding-bottom: 0.6em;
+  margin: 0 1.2em;
 
   @media (max-width: 470px) {
     font-size: 0.8em;

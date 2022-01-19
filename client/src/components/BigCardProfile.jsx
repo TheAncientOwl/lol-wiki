@@ -1,17 +1,6 @@
-export const BigCardProfile = ({ avatarURL, name, title, onClose }) => {
+export const BigCardProfile = ({ avatarURL, name, title }) => {
   return (
     <section className='big-card-section big-card-profile-container' style={{ position: 'relative' }}>
-      <i
-        onClick={onClose}
-        className='bi bi-x-circle-fill text-dark-gold'
-        style={{
-          position: 'absolute',
-          top: '0.5em',
-          right: '0.5em',
-          cursor: 'pointer',
-          fontSize: '1.4em',
-          zIndex: 25,
-        }}></i>
       <img className='big-card-profile-avatar' src={avatarURL} alt={name} />
       <div>
         <h5 className='big-card-profile-name'>{name}</h5>
