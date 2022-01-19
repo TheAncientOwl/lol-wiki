@@ -3,7 +3,7 @@ export const BigCardProfile = ({ avatarURL, name, title, onClose }) => {
     <section className='big-card-section big-card-profile-container' style={{ position: 'relative' }}>
       <i
         onClick={onClose}
-        class='bi bi-x-circle-fill text-dark-gold'
+        className='bi bi-x-circle-fill text-dark-gold'
         style={{
           position: 'absolute',
           top: '0.5em',
