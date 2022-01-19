@@ -33,7 +33,7 @@ export const BigCard = ({ championName, onClose }) => {
   }, [championName]);
 
   return data.loaded === true ? (
-    <div className='card big-card bg-gradient-blue' style={{ position: 'relative' }}>
+    <div className='card big-card bg-gradient-blue' style={{ position: 'relative' }} onClick={e => e.stopPropagation()}>
       <BigCardProfile onClose={onClose} avatarURL={data.avatarURL} name={data.name} title={data.title} />
       <BigCardLore lore={data.lore} />
       <BigCardOverview

@@ -6,6 +6,7 @@ import { Pagination } from './components/Pagination';
 import { Navbar } from './components/Navbar';
 import { BigCard } from './components/BigCard';
 import { SmallCard } from './components/SmallCard';
+import { moveToTopAnchor, TopAnchor } from './components/TopAncor';
 
 export const SearchFieldEmpty = '';
 const ActiveChampionNull = '';
@@ -40,6 +41,7 @@ export const App = () => {
   const handlePageChange = newPage => {
     if (newPage < 1 || newPage > pagesCount) return;
 
+    moveToTopAnchor();
     setCurrentPage(newPage);
   };
 
@@ -61,6 +63,7 @@ export const App = () => {
     setActiveChampion(ActiveChampionNull);
     setCurrentPage(1);
     fetchChampions();
+    moveToTopAnchor();
   };
 
   const championsCards = (
@@ -84,11 +87,13 @@ export const App = () => {
   return (
     <div className='app-container bg-gradient-blue text-light-gray'>
       <Navbar onSearch={handleSearch} onReset={handleReset} />
+      <TopAnchor />
 
       <div
+        onClick={() => setActiveChampion('')}
         style={{
           display: activeChampion === ActiveChampionNull ? 'none' : 'flex',
-          zIndex: 99999,
+          zIndex: 9999,
           position: 'fixed',
           top: 0,
           left: 0,
