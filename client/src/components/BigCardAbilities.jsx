@@ -1,18 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { removeTags } from '../App';
 
 export const BigCardAbilities = ({ spells, passive }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [abilityDescMinHeight, setAbilityDescMinHeight] = useState(0);
 
-  const abilities = [passive, ...spells];
-
-  const abilityDescriptionHeight = useRef(0);
+  const abilities = useMemo(() => [passive, ...spells], [spells, passive]);
 
   useEffect(() => {
     const elements = document.getElementsByClassName('big-card-abilities-description');
 
-    console.log('render');
     for (const element of elements) {
       const oldDisplay = element.style.display;
       element.style.display = 'block';
@@ -22,7 +19,7 @@ export const BigCardAbilities = ({ spells, passive }) => {
 
       element.style.display = oldDisplay;
     }
-  });
+  }, [abilities, abilityDescMinHeight, setAbilityDescMinHeight]);
 
   return (
     <section className='big-card-section'>
