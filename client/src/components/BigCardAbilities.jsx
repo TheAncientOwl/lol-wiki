@@ -19,7 +19,6 @@ export const BigCardAbilities = ({ spells, passive }) => {
 
       const elementHeight = element.getBoundingClientRect().height;
       if (elementHeight > abilityDescMinHeight) setAbilityDescMinHeight(elementHeight);
-      console.log(element.clientHeight);
 
       element.style.display = oldDisplay;
     }
