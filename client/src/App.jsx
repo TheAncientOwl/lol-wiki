@@ -91,18 +91,8 @@ export const App = () => {
 
       <div
         onClick={() => setActiveChampion('')}
-        style={{
-          display: activeChampion === ActiveChampionNull ? 'none' : 'flex',
-          zIndex: 9999,
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(0, 0, 0, 0.65)',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+        style={{ display: activeChampion === ActiveChampionNull ? 'none' : 'flex' }}
+        className='app-big-card-overlay'>
         {activeChampion !== ActiveChampionNull && (
           <BigCard onClose={() => setActiveChampion(ActiveChampionNull)} championName={activeChampion} />
         )}
@@ -116,8 +106,13 @@ export const App = () => {
               id={404}
               avatarURL={NotFound404SRC}
               name={'Not Found'}
-              tags={['oooppps', 'nope']}
-              blurb={'This is not the champion you are looking for...'}
+              tags={['whoops', 'nope', '404']}
+              blurb={
+                <>
+                  <div style={{ marginTop: '1em' }} />
+                  This is not the champion you are looking for...
+                </>
+              }
             />
           </div>
         </div>

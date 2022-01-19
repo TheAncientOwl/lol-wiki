@@ -62,4 +62,5 @@
   box-shadow: 0 0 20px 2px map-get($map: $lol-colors, $key: 'dark-gold');
   border-radius: 0.25em;
   overflow: hidden;
+  cursor: default;
 }
