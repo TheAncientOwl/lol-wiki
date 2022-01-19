@@ -21,8 +21,10 @@ export const SmallCard = ({ id, number, avatarURL, name, tags, blurb, onClick })
         <div style={{ flexGrow: 1 }} />
 
         <div className='small-card-tags'>
-          {tags.map(tag => (
-            <span className='badge bg-black text-light-gray small-card-tag'>{tag}</span>
+          {tags.map((tag, index) => (
+            <span key={index} className='badge bg-black text-light-gray small-card-tag'>
+              {tag}
+            </span>
           ))}
         </div>
       </div>
