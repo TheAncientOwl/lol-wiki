@@ -16,6 +16,18 @@ export const App = () => {
   const [champions, setChampions] = useState([]);
   const [activeChampion, setActiveChampion] = useState(ActiveChampionNull);
 
+  useEffect(() => {
+    const escKeyPressedListener = event => {
+      if (event.key === 'Escape') {
+        setActiveChampion('');
+      }
+    };
+
+    document.addEventListener('keydown', escKeyPressedListener);
+
+    return () => document.removeEventListener('keydown', escKeyPressedListener);
+  }, []);
+
   const fetchChampions = () => {
     axios.get(`/api/champions/page/${currentPage}/size/16`).then(response => {
       setChampions(response.data.champions);
