@@ -6,8 +6,8 @@ export const Navbar = ({ onSearch, onReset }) => {
 
   return (
     <div className='lol-navbar bg-gradient-blue text-white'>
-      <div className='navbar-home'>
-        <img src={LogoSrc} alt='LOL' className='lol-logo' />
+      <div className='navbar-home' onClick={onReset}>
+        <img src={LogoSrc} alt='LOL' className='lol-logo' onClick={onReset} />
         <h5 className='lol-title text-light-gray' onClick={onReset}>
           League of Legends WIKI
         </h5>

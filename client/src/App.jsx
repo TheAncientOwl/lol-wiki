@@ -125,7 +125,7 @@ export const App = () => {
               tags={['whoops', 'nope', '404']}
               blurb={
                 <>
-                  <div style={{ marginTop: '1em' }} />
+                  <span style={{ marginTop: '1em' }} />
                   This is not the champion you are looking for...
                 </>
               }

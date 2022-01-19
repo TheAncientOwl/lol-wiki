@@ -63,6 +63,6 @@ export const BigCard = ({ championName, onClose }) => {
       </div>
     </div>
   ) : (
-    <div class='spinner-border text-dark-gold' role='status'></div>
+    <div className='spinner-border text-dark-gold' role='status'></div>
   );
 };

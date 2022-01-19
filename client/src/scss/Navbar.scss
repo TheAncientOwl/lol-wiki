@@ -45,14 +45,25 @@ img.lol-logo {
   width: 2.1875em;
   height: 2.1875em;
   margin-right: 1em;
+
+  @media (min-width: 1000px) {
+    cursor: pointer;
+    transition: all 150ms ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 h5.lol-title {
   font-size: 1.2em;
-  cursor: pointer;
 
-  &:hover {
-    color: map-get($map: $lol-colors, $key: 'dark-gold');
+  @media (min-width: 1000px) {
+    transition: all 150ms ease;
+    cursor: pointer;
+    &:hover {
+      color: map-get($map: $lol-colors, $key: 'dark-gold');
+    }
   }
 }
 

@@ -12,6 +12,7 @@ export const SmallCard = ({ id, number, avatarURL, name, tags, blurb, onClick })
 
       <div className='card-body position-relative bg-dark-blue' style={{ display: 'flex', flexDirection: 'column' }}>
         <h6 className='card-title border-gold small-card-title'>{name}</h6>
+
         <p className='card-text small-card-blurb'>
           <span className='text-tab' />
           {blurb}
