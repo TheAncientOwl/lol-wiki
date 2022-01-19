@@ -24,3 +24,20 @@
 .big-card-section {
   margin-bottom: 1.2em;
 }
+
+.big-card-exit-icon {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  font-size: 1.4em;
+  z-index: 25;
+
+  @media (min-width: 1000px) {
+    cursor: pointer;
+    transition: all 200ms ease;
+
+    &:hover {
+      color: map-get($map: $lol-colors, $key: 'light-gold');
+    }
+  }
+}

@@ -34,7 +34,7 @@ export const BigCard = ({ championName, onClose }) => {
   const closeButton = (
     <i
       onClick={onClose}
-      className='bi bi-x-circle-fill text-dark-gold'
+      className='bi bi-x-circle-fill text-dark-gold big-card-exit-icon'
       style={{
         position: 'absolute',
         top: '0.5em',
