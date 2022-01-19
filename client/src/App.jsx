@@ -12,6 +12,14 @@ export const SearchFieldEmpty = '';
 const ActiveChampionNull = '';
 const responsiveCardClass = 'col-12 col-md-6 col-lg-3 d-flex align-items-stretch';
 
+const SingleCardContainer = ({ card }) => {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className={responsiveCardClass}>{card}</div>
+    </div>
+  );
+};
+
 export const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pagesCount, setPagesCount] = useState(0);
@@ -100,9 +108,10 @@ export const App = () => {
       </div>
 
       {champions.length === 0 && (
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div className={responsiveCardClass}>
+        <SingleCardContainer
+          card={
             <SmallCard
+              onClick={() => alert('Nope...')}
               number={404}
               id={404}
               avatarURL={NotFound404SRC}
@@ -115,13 +124,13 @@ export const App = () => {
                 </>
               }
             />
-          </div>
-        </div>
+          }
+        />
       )}
 
       {champions.length === 1 && (
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div key={champions[0].id} className={responsiveCardClass}>
+        <SingleCardContainer
+          card={
             <SmallCard
               onClick={() => setActiveChampion(champions[0].name)}
               number={champions[0].number}
@@ -131,8 +140,8 @@ export const App = () => {
               tags={champions[0].tags}
               blurb={champions[0].blurb}
             />
-          </div>
-        </div>
+          }
+        />
       )}
 
       {champions.length > 1 && (
