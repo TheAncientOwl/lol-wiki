@@ -10,6 +10,7 @@ import { moveToTopAnchor, TopAnchor } from './components/TopAncor';
 
 export const SearchFieldEmpty = '';
 const ActiveChampionNull = '';
+const responsiveCardClass = 'col-12 col-md-6 col-lg-3 d-flex align-items-stretch';
 
 export const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -69,7 +70,7 @@ export const App = () => {
   const championsCards = (
     <div className='row g-1'>
       {champions.map(champion => (
-        <div key={champion.id} className='col-12 col-md-6 col-lg-3 d-flex align-items-stretch'>
+        <div key={champion.id} className={responsiveCardClass}>
           <SmallCard
             onClick={() => setActiveChampion(champion.name)}
             number={champion.number}
@@ -100,7 +101,7 @@ export const App = () => {
 
       {champions.length === 0 && (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div className='col-12 col-md-6 col-lg-3 d-flex align-items-stretch'>
+          <div className={responsiveCardClass}>
             <SmallCard
               number={404}
               id={404}
@@ -120,7 +121,7 @@ export const App = () => {
 
       {champions.length === 1 && (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div key={champions[0].id} className='col-12 col-md-6 col-lg-3 d-flex align-items-stretch'>
+          <div key={champions[0].id} className={responsiveCardClass}>
             <SmallCard
               onClick={() => setActiveChampion(champions[0].name)}
               number={champions[0].number}
