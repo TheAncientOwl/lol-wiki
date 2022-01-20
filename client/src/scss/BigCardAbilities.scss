@@ -39,6 +39,8 @@
       color: map-get($map: $lol-colors, $key: 'light-gray');
     }
   }
+
+  cursor: pointer;
 }
 
 .big-card-ability-name {
