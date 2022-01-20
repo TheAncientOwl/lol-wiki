@@ -3,23 +3,40 @@ import { removeTags } from '../App';
 
 export const BigCardAbilities = ({ spells, passive }) => {
   const [activeTab, setActiveTab] = useState(0);
-  const [abilityDescMinHeight, setAbilityDescMinHeight] = useState(0);
+  const [abilityDescriptionMaxHeight, setAbilityDescriptionMaxHeight] = useState(0);
 
   const abilities = useMemo(() => [passive, ...spells], [spells, passive]);
 
+  const calculateAbilityDescriptionMaxHeight = () => {
+    const elements = Array.from(document.querySelectorAll('div.big-card-abilities-description'));
+
+    const heightReducer = (previousHeight, currentElement) => {
+      const oldDisplay = currentElement.style.display;
+      currentElement.style.display = 'block';
+
+      const elementHeight = currentElement.getBoundingClientRect().height;
+
+      currentElement.style.display = oldDisplay;
+
+      return Math.max(previousHeight, elementHeight);
+    };
+
+    const maxHeight = elements.reduce(heightReducer, 0);
+
+    setAbilityDescriptionMaxHeight(maxHeight);
+  };
+
+  useEffect(calculateAbilityDescriptionMaxHeight, [abilities]);
+
   useEffect(() => {
-    const elements = document.getElementsByClassName('big-card-abilities-description');
+    const windowResizeEvent = () => {
+      calculateAbilityDescriptionMaxHeight();
+    };
 
-    for (const element of elements) {
-      const oldDisplay = element.style.display;
-      element.style.display = 'block';
+    window.addEventListener('resize', windowResizeEvent);
 
-      const elementHeight = element.getBoundingClientRect().height;
-      if (elementHeight > abilityDescMinHeight) setAbilityDescMinHeight(elementHeight);
-
-      element.style.display = oldDisplay;
-    }
-  }, [abilities, abilityDescMinHeight, setAbilityDescMinHeight]);
+    return () => window.removeEventListener('resize', windowResizeEvent);
+  }, []);
 
   return (
     <section className='big-card-section'>
@@ -53,7 +70,7 @@ export const BigCardAbilities = ({ spells, passive }) => {
         {abilities.map((ability, index) => (
           <div
             key={index + ability.id}
-            style={{ minHeight: `${abilityDescMinHeight}px` }}
+            style={{ minHeight: `${abilityDescriptionMaxHeight}px` }}
             className={`tab-pane fade ${index === activeTab ? 'show active' : ''} big-card-abilities-description`}
             id={ability.id}
             role='tabpanel'
