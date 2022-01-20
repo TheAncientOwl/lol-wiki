@@ -31,19 +31,7 @@ export const BigCard = ({ championName, onClose }) => {
     axios.get(`/api/${championName}/data`).then(response => setData({ loaded: true, ...response.data }));
   }, [championName]);
 
-  const closeButton = (
-    <i
-      onClick={onClose}
-      className='bi bi-x-circle-fill text-dark-gold big-card-exit-icon'
-      style={{
-        position: 'absolute',
-        top: '0.5em',
-        right: '0.5em',
-        cursor: 'pointer',
-        fontSize: '1.4em',
-        zIndex: 25,
-      }}></i>
-  );
+  const closeButton = <i onClick={onClose} className='bi bi-x-circle-fill text-dark-gold big-card-exit-icon'></i>;
 
   return data.loaded === true ? (
     <div className='card big-card bg-gradient-blue' style={{ position: 'relative' }} onClick={e => e.stopPropagation()}>
