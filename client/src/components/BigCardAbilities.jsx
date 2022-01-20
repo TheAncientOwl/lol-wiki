@@ -28,16 +28,6 @@ export const BigCardAbilities = ({ spells, passive }) => {
 
   useEffect(calculateAbilityDescriptionMaxHeight, [abilities]);
 
-  useEffect(() => {
-    const windowResizeEvent = () => {
-      calculateAbilityDescriptionMaxHeight();
-    };
-
-    window.addEventListener('resize', windowResizeEvent);
-
-    return () => window.removeEventListener('resize', windowResizeEvent);
-  }, []);
-
   return (
     <section className='big-card-section'>
       <h5 className='big-card-section-title'>Abilities</h5>
