@@ -11,12 +11,21 @@
   display: flex;
   gap: 1em;
   border-bottom: 2px solid map-get($map: $lol-colors, $key: 'dark-gold');
+
+  @media (max-width: 590px) {
+    justify-content: center;
+  }
 }
 
 .big-card-abilities-nav-item {
   &:nth-child(1) {
     padding-right: 1em;
     border-right: 1px solid map-get($map: $lol-colors, $key: 'dark-gold');
+
+    @media (max-width: 325px) {
+      padding-right: 0;
+      border: none;
+    }
   }
 
   display: flex;
