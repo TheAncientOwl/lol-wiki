@@ -8,3 +8,6 @@ GET http://localhost:5000/api/akshan/data
 
 ###
 GET http://localhost:5000/api/akshan/summary
+
+###
+GET http://localhost:5000/api/fiddlesticks/summary

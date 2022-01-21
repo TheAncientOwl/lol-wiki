@@ -4,7 +4,7 @@ const path = require('path');
 const IMAGES_LINK =
   process.env.NODE_ENV === 'production'
     ? 'https://lol-wiki-react.herokuapp.com/images'
-    : 'http://localhost:5000}/images';
+    : 'http://localhost:5000/images';
 const CHAMPIONS_DATA_PATH = path.join(__dirname, '..', 'assets', 'data', 'en_US', 'champion');
 
 const makeChampionsMap = () => {
