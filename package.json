@@ -17,6 +17,6 @@
     "client": "yarn --cwd client start",
     "client-install": "yarn --cwd install",
     "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn run --cwd client install && yarn run -cwd client build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn run --cwd client install && yarn run --cwd client build"
   }
 }
