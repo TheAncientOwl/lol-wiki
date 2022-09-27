@@ -10,7 +10,7 @@ Simple card-display league of legends champions wiki with images, skins, lore an
 ## Features
 
 - Custom NodeJS Rest API to serve data to frontend.
-- List all champions before patch 12.1
+- List all champions before patch 12.16.2
 - Preview champion lore and tags
 - View champion title, stats, abilities and skins
 - Search a specific champion
