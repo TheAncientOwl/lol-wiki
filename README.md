@@ -5,7 +5,6 @@
 Simple card-display league of legends champions wiki with images, skins, lore and stats.
 
 - data from https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html
-- live preview https://lol-wiki-react.herokuapp.com/
 
 ## Features
 
